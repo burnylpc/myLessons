@@ -1,14 +1,14 @@
 package brands;
 
-public class Nissan implements Brand {
+public class Mercedes implements Brand {
 
     @Override
     public String nameBrand() {
-        return "Nissan";
+        return "Mercedes-Benz";
     }
 
     @Override
     public String country() {
-        return "Japan";
+        return "Germany";
     }
 }

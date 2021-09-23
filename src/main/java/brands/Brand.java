@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public interface Brand {
+package brands;
+
+public interface Brand {
+    String nameBrand();
+    String country();
 }

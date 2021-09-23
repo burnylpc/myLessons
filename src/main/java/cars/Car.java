@@ -1,3 +1,5 @@
+package cars;
+
 import beepers.Beeper;
 import engines.Engine;
 
@@ -11,20 +13,13 @@ public abstract class Car {
         this.engine = engine;
     }
 
-    /*public String checkBeep() {
-        return beeper.makeSound();
-    }
-
-    public String checkSpeed() {
-        return engine.makeRotation();
-    }*/
-
     public String checkBeep() {
         return beeper.makeSound();
     }
-
     public String checkSpeed() {
         return engine.makeRotation();
     }
+
+
 
 }

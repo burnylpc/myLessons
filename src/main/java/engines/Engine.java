@@ -1,4 +1,6 @@
-public interface Engine {
+package engines;
 
+public interface Engine {
     String makeRotation();
+    String toString();
 }
