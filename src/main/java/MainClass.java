@@ -60,7 +60,7 @@ public class MainClass {
         int randomNumberOfPeople = random.nextInt(99);
         System.out.println("Надо отвезти " + randomNumberOfPeople);
 
-       int numberOfSeats = mercedesSprinter.NumberOfSeats();
+       int numberOfSeats = mercedesSprinter.numberOfSeats();
 
         if (randomNumberOfPeople > numberOfSeats) {
             System.out.println("Нельзя посадить " + randomNumberOfPeople + " одновременно");

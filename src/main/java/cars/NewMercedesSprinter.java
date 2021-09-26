@@ -11,7 +11,7 @@ public class NewMercedesSprinter extends NewCar {
 
     private int maxNumberOfSeats = 21;
 
-    public int NumberOfSeats() {
+    public int numberOfSeats() {
         return maxNumberOfSeats;
     }
 }
