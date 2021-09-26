@@ -3,7 +3,6 @@ import java.util.Iterator;
 public class ArrayList<E> implements List<E> {
 
     private E[] values;
-    private int size;
 
     public ArrayList() {
         this.values = (E[]) new Object[0];
