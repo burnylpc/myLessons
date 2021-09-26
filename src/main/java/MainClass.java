@@ -27,17 +27,17 @@ public class MainClass {
         Lambo lambo = new Lambo(fancyMusic, engine12V);
         Viper viper = new Viper(magicSparks, fsdEngine);
 
-//        System.out.println(lambo.checkBeep());
-//        System.out.println(lambo.checkSpeed());
+        System.out.println(lambo.checkBeep());
+        System.out.println(lambo.checkSpeed());
 
         ArrayList<Car> carList = new ArrayList<>();
         carList.add(lambo);
         carList.add(viper);
 
-//        for (int i = 0; i < carList.size(); i++) {
-//            System.out.println(carList.get(i).checkSpeed());
-//            System.out.println(carList.get(i).checkBeep());
-//        }
+        for (Car car : carList) {
+            System.out.println(car.checkSpeed());
+            System.out.println(car.checkBeep());
+        }
 
 
 
