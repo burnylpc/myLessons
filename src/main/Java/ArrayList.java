@@ -63,7 +63,7 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public Iterator<E> iterator() {
-        ArrayIterator<E> eArrayIterator = new ArrayIterator<>(values);
-        return eArrayIterator;
+        ArrayIterator<E> ArrayIterator = new ArrayIterator<>(values);
+        return ArrayIterator;
     }
 }
