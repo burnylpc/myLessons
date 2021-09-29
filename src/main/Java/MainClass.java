@@ -8,36 +8,36 @@ public class MainClass {
 
     public static void main(String[] args){
 
-//        HashMap<String,TestSubject> hashMap = new HashMap<>();
-//
-//        String selectString = "";
-//
-//        for (int i = 0; i < 100; i++) {
-//            TestSubject subject = new TestSubject(i);
-//            hashMap.put(subject.getId(), subject);
-//            if (i == 27) {
-//                selectString = subject.getId();
-//            }
-//        }
-//
-//        System.out.println(hashMap.get(selectString).getId());
-//
-//        if (hashMap.get(selectString).getId() == selectString) {
-//            System.out.println("true");
-//        } else {
-//            System.out.println("false");
-//        }
-//
-//        TreeMap<Integer, TestSubject> subjectTreeMap = new TreeMap<>(new TestComparator());
-//
-//        for (int i = 0; i < 100; i++) {
-//            TestSubject subject = new TestSubject(i);
-//            subjectTreeMap.put(subject.getOrdinal(), subject);
-//        }
-//
-//        System.out.println(subjectTreeMap.lastEntry());
-//
-//        //////////////////////////////////////////////////////
+        HashMap<String,TestSubject> hashMap = new HashMap<>();
+
+        String selectString = "";
+
+        for (int i = 0; i < 100; i++) {
+            TestSubject subject = new TestSubject(i);
+            hashMap.put(subject.getId(), subject);
+            if (i == 27) {
+                selectString = subject.getId();
+            }
+        }
+
+        System.out.println(hashMap.get(selectString).getId());
+
+        if (hashMap.get(selectString).getId() == selectString) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+
+        TreeMap<Integer, TestSubject> subjectTreeMap = new TreeMap<>(new TestComparator());
+
+        for (int i = 0; i < 100; i++) {
+            TestSubject subject = new TestSubject(i);
+            subjectTreeMap.put(subject.getOrdinal(), subject);
+        }
+
+        System.out.println(subjectTreeMap.lastEntry());
+
+        //////////////////////////////////////////////////////
 
 
         //Домашнее задание:
@@ -73,7 +73,8 @@ public class MainClass {
                 Pattern pattern = Pattern.compile(".*([Сс]традан)(ие|ия|ию|ии|ием|иях|ий).*", Pattern.UNICODE_CASE); //в кодировке Unicode
                 Matcher matcher = pattern.matcher(word);
 
-                if (matcher.matches()) {quantityWithPattern++;} //счетчик
+                if (matcher.matches()) {quantityWithPattern++;
+                    System.out.println(word);} //счетчик
             }
         }
 
@@ -88,29 +89,25 @@ public class MainClass {
 
             //текущая строка
             String str = (String) list.get(i);
+            Scanner scanner = new Scanner(str);
+            Pattern pattern = Pattern.compile(".*([Сс]традан)(ие|ия|ию|ии|ием|иях|ий).*", Pattern.UNICODE_CASE); //в кодировке Unicode
 
-            //разбить строку на массив слов
-            String[] subString = str.split("\\s");
-
-            for (int j = 0; j < subString.length; j++) {
-
-                String word = subString[j];
-
-                Scanner scanner = new Scanner(word);
-                Pattern pattern = Pattern.compile(".*([Сс]традан)(ие|ия|ию|ии|ием|иях|ий).*", Pattern.UNICODE_CASE); //в кодировке Unicode
-                Scanner sc = null;
-
-                while (scanner.hasNextLine()) {
-                    sc = new Scanner(scanner.nextLine());
-                    while (sc.findInLine(pattern) != null) {
-                        quantityWithScanner = quantityWithScanner + sc.match().groupCount();
-                    }
-                }
+            if (scanner.findInLine(pattern) != null) {
+                quantityWithScanner = quantityWithScanner++;
             }
+
         }
 
         System.out.println("Всего слов \"Страдание\" (сканер): " + quantityWithScanner);
 
+
+        //03. Циклы: Вывести в консоль таблицу умножения до 10
+        for (int i = 1; i < 11; i++) {
+            for (int j = 1; j < 11; j++) {
+                System.out.print(i * j + " ");
+            }
+            System.out.println();
+        }
     }
 
 }
