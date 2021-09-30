@@ -8,18 +8,19 @@ public class Parser {
         ArrayList<String> list = new ArrayList<>();
         try {
             reader = new BufferedReader(new FileReader(file));
+            String line = reader.readLine();
+
+            while (line != null) {
+                list.add(line);
+                line = reader.readLine();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-
-        String line = reader.readLine();
-
-        while (line != null) {
-            list.add(line);
-            line = reader.readLine();
+        } finally {
+            assert reader != null;
+            reader.close();
         }
 
         return list;
     }
-
 }
