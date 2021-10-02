@@ -3,6 +3,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 public class Consumer implements Runnable {
 
     private LinkedBlockingDeque<String> linkedBlockingDeque;
+    private boolean play = true;
 
     public Consumer(LinkedBlockingDeque<String> linkedBlockingDeque) {
         this.linkedBlockingDeque = linkedBlockingDeque;
@@ -10,11 +11,16 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
+        while (play) {
             try {
-                System.out.println(linkedBlockingDeque.take());
+                String word = linkedBlockingDeque.take();
+                if (ConstVal.END_STR.equals(word)) {
+                    play = false;
+                }else {
+                    System.out.println(word);
+                }
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                e.printStackTrace();
             }
         }
     }

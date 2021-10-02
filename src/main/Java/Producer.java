@@ -44,11 +44,19 @@ public class Producer implements Runnable {
                     try {
                         linkedBlockingDeque.put(word);
                     } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
+                        e.printStackTrace();
                     }
                 }
             }
         }
+
+        try {
+            linkedBlockingDeque.put("end");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 }
