@@ -23,8 +23,7 @@ public class EverySecondDate implements Runnable {
                 Thread.sleep(1000); //каждую секунду
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
-            return;
+            Thread.currentThread().interrupt();
         }
 
     }

@@ -18,8 +18,7 @@ public class EveryFiveSecondsMessage implements Runnable {
                 Thread.sleep(5000);
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
-            return;
+            Thread.currentThread().interrupt();
         }
     }
 

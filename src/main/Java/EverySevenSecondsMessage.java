@@ -12,8 +12,7 @@ public class EverySevenSecondsMessage implements Runnable {
                 Thread.sleep(7000);
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
-            return;
+            Thread.currentThread().interrupt();
         }
     }
 }
